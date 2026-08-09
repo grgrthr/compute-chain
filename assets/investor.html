@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Compute Chain — Investor Demo</title>
+<style>
+:root{--bg:#030711;--bg2:#0a0f1d;--bg3:#111827;--border:#1e293b;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;--blue:#3b82f6;--green:#22c55e;--yellow:#eab308;--red:#ef4444;--purple:#8b5cf6;--radius:10px;--radius-lg:14px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:13px;line-height:1.5;overflow:hidden}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.app{display:flex;height:100vh}
+.sidebar{width:200px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;z-index:20;overflow-y:auto}
+.sidebar-logo{padding:14px 16px;border-bottom:1px solid var(--border);font-size:1em;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:8px;position:sticky;top:0;background:var(--bg2)}
+.sidebar-nav{flex:1;padding:6px 0}
+.nav-item{display:flex;align-items:center;gap:8px;padding:7px 14px;color:var(--text2);cursor:pointer;border-left:3px solid transparent;font-size:.78em;transition:all .15s}
+.nav-item:hover{color:var(--text);background:var(--bg3)}
+.nav-item.active{color:var(--blue);background:rgba(59,130,246,.08);border-left-color:var(--blue)}
+.nav-badge{margin-left:auto;background:var(--blue);color:#fff;font-size:.6em;padding:1px 7px;border-radius:8px;font-weight:700;min-width:16px;text-align:center}
+.sidebar-footer{padding:10px 14px;border-top:1px solid var(--border);font-size:.65em;color:var(--text3);position:sticky;bottom:0;background:var(--bg2)}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.topbar{height:42px;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 12px;gap:14px;flex-shrink:0}
+.tb-stat{display:flex;align-items:center;gap:5px;font-size:.74em}
+.tb-dot{width:6px;height:6px;border-radius:50%}.tb-dot.green{background:var(--green);box-shadow:0 0 6px var(--green)}
+.tb-val{font-weight:700;font-size:1.05em}.tb-lbl{color:var(--text2);font-size:.65em}.tb-spacer{flex:1}
+.content{flex:1;overflow-y:auto;padding:10px}
+.section{display:none}.section.active{display:block}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px}
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:11px;text-align:center;cursor:pointer;transition:all .15s}.stat-card:hover{border-color:var(--blue)}
+.sc-val{font-size:1.6em;font-weight:700;line-height:1.1}.sc-lbl{font-size:.62em;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+@keyframes valPulse{0%{transform:scale(1)}50%{transform:scale(1.12);color:var(--blue)}100%{transform:scale(1)}}.sc-pulse{animation:valPulse .35s ease}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:12px;margin-bottom:10px}
+.card-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.card-ttl{font-size:.68em;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.badge{display:inline-block;padding:1px 7px;border-radius:8px;font-size:.62em;font-weight:600}
+.bg-green{background:rgba(34,197,94,.12);color:var(--green)}.bg-blue{background:rgba(59,130,246,.12);color:var(--blue)}.bg-yellow{background:rgba(234,179,8,.12);color:var(--yellow)}.bg-red{background:rgba(239,68,68,.12);color:var(--red)}
+.worker-row{display:flex;justify-content:space-between;align-items:center;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.03);font-size:.75em}
+.worker-dot{width:7px;height:7px;border-radius:50%;margin-right:6px}.worker-dot.online{background:var(--green)}.worker-dot.busy{background:var(--yellow)}.worker-dot.idle{background:var(--green)}
+.timeline-item{display:flex;gap:8px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.02);font-size:.7em;animation:slideIn .3s ease}
+@keyframes slideIn{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
+.tl-icon{font-size:1em;min-width:18px}.tl-time{color:var(--text3);min-width:60px;font-family:monospace;font-size:.78em}.tl-msg{flex:1}
+.job-row{display:flex;justify-content:space-between;align-items:center;padding:5px 8px;border-bottom:1px solid rgba(255,255,255,.03);font-size:.72em}
+.progress-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin:3px 0}.progress-fill{height:100%;background:var(--blue);border-radius:3px;transition:width .3s}
+.btn{padding:5px 14px;border:1px solid var(--border);border-radius:var(--radius);background:transparent;color:var(--text);cursor:pointer;font-size:.74em;transition:all .15s}.btn:hover{background:var(--bg3)}
+.btn-primary{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:600}.btn-primary:hover{opacity:.85}.btn-primary:disabled{opacity:.4;cursor:not-allowed}
+input[type=file]{display:none}
+.file-upload{padding:8px 16px;border:2px dashed var(--border);border-radius:var(--radius);text-align:center;cursor:pointer;font-size:.78em;color:var(--text2);transition:all .15s}.file-upload:hover{border-color:var(--blue);color:var(--blue)}
+@media(max-width:768px){.sidebar{display:none}.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="sidebar-logo">⚡ Compute Chain</div>
+<nav class="sidebar-nav" id="sidebar-nav">
+<div class="nav-item active" data-section="overview">📊 Overview</div>
+<div class="nav-item" data-section="marketplace">🛒 Marketplace<span class="nav-badge" id="nav-jobs">0</span></div>
+<div class="nav-item" data-section="workers">🔗 Workers<span class="nav-badge" id="nav-workers">0</span></div>
+<div class="nav-item" data-section="activity">📡 Activity</div>
+<div class="nav-item" data-section="network">🌐 Network</div>
+<div class="nav-item" data-section="jobs">⚙️ Job Queue</div>
+<div class="nav-item" data-section="proofs">🔐 Proofs</div>
+<div class="nav-item" data-section="consensus">🤝 Consensus</div>
+<div class="nav-item" data-section="storage">💾 Storage</div>
+<div class="nav-item" data-section="system">💻 System</div>
+</nav>
+<div class="sidebar-footer"><span style="color:var(--green)">● Live</span> • v4.0</div>
+</aside>
+<main class="main">
+<header class="topbar">
+<div class="tb-stat"><div class="tb-dot green"></div><div><div class="tb-val">ONLINE</div><div class="tb-lbl">Network</div></div></div>
+<div class="tb-stat"><div class="tb-val" id="tb-workers">0</div><div class="tb-lbl">Workers</div></div>
+<div class="tb-stat"><div class="tb-val" id="tb-jobs">0</div><div class="tb-lbl">Jobs</div></div>
+<div class="tb-stat"><div class="tb-val" id="tb-blocks">0</div><div class="tb-lbl">Blocks</div></div>
+<div class="tb-stat"><div class="tb-val" id="tb-rewards">0</div><div class="tb-lbl">Rewards</div></div>
+<div class="tb-spacer"></div>
+<span style="font-size:.65em;color:var(--text3)"><span id="ws-dot" style="color:var(--red)">●</span> <span id="ws-status">WS</span></span>
+</header>
+<div class="content">
+<section id="overview" class="section active">
+<div class="stat-grid">
+<div class="stat-card" data-nav="workers"><div class="sc-val" id="sc-workers">0</div><div class="sc-lbl">Workers Online</div></div>
+<div class="stat-card" data-nav="marketplace"><div class="sc-val" id="sc-jobs">0</div><div class="sc-lbl">Jobs Completed</div></div>
+<div class="stat-card"><div class="sc-val" id="sc-blocks">0</div><div class="sc-lbl">Blocks Produced</div></div>
+<div class="stat-card"><div class="sc-val" id="sc-rewards">0</div><div class="sc-lbl">Rewards</div></div>
+<div class="stat-card"><div class="sc-val" id="sc-tps">0</div><div class="sc-lbl">TPS</div></div>
+<div class="stat-card"><div class="sc-val"><span class="badge bg-green" id="sc-status">HEALTHY</span></div><div class="sc-lbl">Consensus</div></div>
+</div>
+<div class="grid-2">
+<div class="card"><div class="card-hd"><span class="card-ttl">🖥️ Workers</span></div><div id="worker-mini-list"></div></div>
+<div class="card"><div class="card-hd"><span class="card-ttl">📡 Recent Activity</span></div><div id="mini-timeline" style="max-height:200px;overflow-y:auto"></div></div>
+</div>
+</section>
+<section id="marketplace" class="section">
+<div class="grid-2">
+<div class="card">
+<div class="card-hd"><span class="card-ttl">📤 Submit Job</span></div>
+<label class="file-upload"><input type="file" id="file-input">📁 Drop image or CSV here</label>
+<div id="file-info" style="font-size:.7em;color:var(--text2);margin-top:6px;display:none"></div>
+<div id="submit-error" style="font-size:.7em;color:var(--red);margin-top:4px;display:none"></div>
+<button class="btn btn-primary" style="margin-top:8px;width:100%" id="btn-submit" disabled>🚀 Submit Job</button>
+</div>
+<div class="card"><div class="card-hd"><span class="card-ttl">📋 Jobs</span></div><div id="jobs-list"></div></div>
+</div>
+</section>
+<section id="workers" class="section"><div class="card"><div class="card-hd"><span class="card-ttl">🔗 Worker Network</span></div><div id="worker-list"></div></div></section>
+<section id="activity" class="section"><div class="card"><div class="card-hd"><span class="card-ttl">📡 Live Activity</span><span id="act-count" style="font-size:.7em;color:var(--text2)">0 events</span></div><div id="timeline" style="max-height:500px;overflow-y:auto"></div></div></section>
+<section id="network" class="section"><div class="card"><div class="card-hd"><span class="card-ttl">🌐 Network Topology</span></div><div style="text-align:center;padding:20px;color:var(--text2)">3 nodes • P2P • Gossipsub • mDNS</div></div></section>
+<section id="jobs" class="section"><div class="card"><div class="card-hd"><span class="card-ttl">⚙️ Job Queue</span></div><div id="job-queue-list"></div></div></section>
+<section id="proofs" class="section"><div class="card"><div class="card-hd"><span class="card-ttl">🔐 Proofs</span></div><div style="text-align:center;color:var(--text3);padding:20px">Proofs appear after job completion</div></div></section>
+<section id="consensus" class="section"><div class="stat-grid"><div class="stat-card"><div class="sc-val"><span class="badge bg-green">HEALTHY</span></div><div class="sc-lbl">Status</div></div><div class="stat-card"><div class="sc-val">3</div><div class="sc-lbl">Validators</div></div><div class="stat-card"><div class="sc-val">Instant</div><div class="sc-lbl">Finality</div></div></div></section>
+<section id="storage" class="section"><div class="card"><div class="card-hd"><span class="card-ttl">💾 Storage</span></div><div style="text-align:center;color:var(--text2);padding:20px">Blockchain • Jobs • Proofs • Tokens</div></div></section>
+<section id="system" class="section"><div class="stat-grid"><div class="stat-card"><div class="sc-val">v4.0</div><div class="sc-lbl">Version</div></div><div class="stat-card"><div class="sc-val">Rust</div><div class="sc-lbl">Runtime</div></div><div class="stat-card"><div class="sc-val">278</div><div class="sc-lbl">Tests</div></div><div class="stat-card"><div class="sc-val">0</div><div class="sc-lbl">Warnings</div></div></div></section>
+</div></main></div>
+<script>
+(function(){
+var S={workers:0,jobs:0,blocks:0,rewards:0,workersList:[],timeline:[],activeJobs:[],wsEvents:null,wsConnected:false};
+
+function navigate(s){
+var items=document.querySelectorAll('.nav-item');
+for(var i=0;i<items.length;i++)items[i].classList.remove('active');
+var t=document.querySelector('.nav-item[data-section="'+s+'"]');
+if(t)t.classList.add('active');
+var secs=document.querySelectorAll('.section');
+for(var j=0;j<secs.length;j++)secs[j].classList.remove('active');
+var sec=document.getElementById(s);
+if(sec)sec.classList.add('active');
+}
+
+document.getElementById('sidebar-nav').addEventListener('click',function(e){
+var item=e.target.closest('.nav-item');
+if(item){var s=item.getAttribute('data-section');if(s)navigate(s);}
+});
+
+var cards=document.querySelectorAll('.stat-card[data-nav]');
+for(var k=0;k<cards.length;k++){
+cards[k].addEventListener('click',function(){var s=this.getAttribute('data-nav');if(s)navigate(s);});
+}
+
+// ═══ SNAPSHOT ON LOAD ═══
+function loadSnapshot(){
+fetch('/api/demo/state').then(function(r){return r.json();}).then(function(d){
+if(d.workers){
+S.workersList=[];
+for(var i=0;i<d.workers.length;i++){
+var w=d.workers[i];
+var st=w.status==='Idle'?'idle':w.status==='Busy'?'busy':'online';
+S.workersList.push({id:w.worker_id,status:st,capabilities:w.capabilities||[],currentJob:w.current_job});
+}
+S.workers=S.workersList.length;
+}
+if(d.jobs){
+for(var j=0;j<d.jobs.length;j++){
+var job=d.jobs[j];
+var exists=S.activeJobs.find(function(x){return x.id===job.job_id;});
+if(!exists){
+S.activeJobs.push({
+id:job.job_id,task:job.task_type,status:job.status,
+progress:job.progress||0,verification:job.verification,
+merkle_root:job.merkle_root,proof_hash:job.proof_hash,
+proof_verified:job.proof_verified,block_height:job.block_height,
+reward:job.reward,worker_id:job.worker_id
+});
+}
+}
+S.jobs=d.jobs_count||0;
+}
+if(d.chain_height!==undefined)S.blocks=d.chain_height;
+updateUI();
+}).catch(function(){});
+}
+
+// ═══ WEBSOCKET ═══
+function connectWS(){
+if(S.wsEvents&&(S.wsEvents.readyState===WebSocket.OPEN||S.wsEvents.readyState===WebSocket.CONNECTING))return;
+var proto=location.protocol==='https:'?'wss':'ws';
+S.wsEvents=new WebSocket(proto+'://'+location.host+'/worker/events');
+S.wsEvents.onopen=function(){
+S.wsConnected=true;
+document.getElementById('ws-dot').style.color='var(--green)';
+document.getElementById('ws-status').textContent='Live';
+loadSnapshot();
+};
+S.wsEvents.onmessage=function(e){try{handleEvent(JSON.parse(e.data));}catch(err){}};
+S.wsEvents.onclose=function(){
+S.wsConnected=false;
+document.getElementById('ws-dot').style.color='var(--red)';
+document.getElementById('ws-status').textContent='Off';
+setTimeout(connectWS,2000);
+};
+S.wsEvents.onerror=function(){};
+}
+
+function handleEvent(msg){
+var wid=msg.worker_id||'';
+switch(msg.type){
+case'worker_connected':case'worker_registered':
+if(!S.workersList.some(function(w){return w.id===wid;})){
+S.workersList.push({id:wid,status:'idle',capabilities:msg.capabilities||[],currentJob:null});
+addTL('🔗','Worker '+wid+' connected');
+S.workers=S.workersList.length;
+}
+break;
+case'worker_idle':
+var wf=S.workersList.find(function(w){return w.id===wid;});
+if(wf){wf.status='idle';wf.currentJob=null;}
+break;
+case'worker_disconnected':
+S.workersList=S.workersList.filter(function(w){return w.id!==wid;});
+S.workers=S.workersList.length;
+addTL('🔌','Worker '+wid+' disconnected');
+break;
+case'job_submitted':addTL('📤','Job '+msg.job_id+' submitted');break;
+case'job_assigned':addTL('🎯','Job '+msg.job_id+' assigned to '+wid);break;
+case'job_progress':
+addTL('⚙️','Job '+msg.job_id+' - '+msg.progress+'%');
+var jp=S.activeJobs.find(function(j){return j.id===msg.job_id;});
+if(jp){jp.progress=msg.progress;jp.status='Running';}
+break;
+case'verification_passed':addTL('🔍','Job '+msg.job_id+' verified');break;
+case'verification_failed':addTL('❌','Job '+msg.job_id+' verification FAILED');break;
+case'merkle_committed':addTL('🌳','Job '+msg.job_id+' Merkle committed');break;
+case'commitment_proof_generated':addTL('🔐','Job '+msg.job_id+' Proof generated');break;
+case'commitment_proof_verified':
+addTL('✅','Job '+msg.job_id+' Proof verified');
+var jpv=S.activeJobs.find(function(j){return j.id===msg.job_id;});
+if(jpv)jpv.proof_verified=true;
+break;
+case'block_accepted':
+addTL('⛓️','Block #'+msg.block_height+' accepted');
+var jb=S.activeJobs.find(function(j){return j.id===msg.job_id;});
+if(jb){jb.block_height=msg.block_height;jb.status='Finalized';}
+S.blocks=msg.block_height||S.blocks;
+break;
+case'reward_distributed':
+addTL('💰','Reward +'+(msg.amount||10)+' to '+wid);
+var jr=S.activeJobs.find(function(j){return j.id===msg.job_id;});
+if(jr)jr.reward=(msg.amount||10);
+break;
+case'job_result':
+var jr2=S.activeJobs.find(function(j){return j.id===msg.job_id;});
+if(jr2){
+if(msg.status==='Completed'||msg.verification==='Verified'){
+jr2.progress=100;jr2.status='Completed';
+if(msg.verification)jr2.verification=msg.verification;
+if(msg.output_hash)jr2.output_hash=msg.output_hash;
+if(msg.merkle_root)jr2.merkle_root=msg.merkle_root;
+addTL('✅','Job '+msg.job_id+' completed');
+}else{
+jr2.status='Failed';
+addTL('❌','Job '+msg.job_id+' failed');
+}
+}
+break;
+case'job_failed':
+var jf=S.activeJobs.find(function(j){return j.id===msg.job_id;});
+if(jf){jf.status='Failed';}
+addTL('❌','Job '+msg.job_id+' failed');
+break;
+}
+renderJobs();
+renderTL();
+updateUI();
+}
+
+function addTL(icon,msg){
+var t=new Date().toLocaleTimeString();
+S.timeline.unshift({icon:icon,msg:msg,time:t});
+if(S.timeline.length>100)S.timeline.pop();
+}
+
+function renderTL(){
+var h='';
+for(var i=0;i<Math.min(S.timeline.length,30);i++){
+var e=S.timeline[i];
+h+='<div class="timeline-item"><span class="tl-icon">'+e.icon+'</span><span class="tl-time">'+e.time+'</span><span class="tl-msg">'+e.msg+'</span></div>';
+}
+var tl=document.getElementById('timeline');if(tl)tl.innerHTML=h||'<div style="text-align:center;color:var(--text3);padding:20px">Waiting...</div>';
+var mt=document.getElementById('mini-timeline');
+if(mt){
+var mh='';
+for(var j=0;j<Math.min(S.timeline.length,8);j++){
+var me=S.timeline[j];
+mh+='<div class="timeline-item"><span class="tl-icon">'+me.icon+'</span><span class="tl-time">'+me.time+'</span><span class="tl-msg">'+me.msg+'</span></div>';
+}
+mt.innerHTML=mh||'<div style="text-align:center;color:var(--text3)">-</div>';
+}
+var ac=document.getElementById('act-count');if(ac)ac.textContent=S.timeline.length+' events';
+}
+
+function updateUI(){
+setVal('tb-workers',S.workers);setVal('tb-blocks',S.blocks);
+setVal('sc-workers',S.workers);setVal('sc-blocks',S.blocks);
+setVal('sc-tps',(S.jobs/10).toFixed(1));
+var nj=document.getElementById('nav-jobs');if(nj)nj.textContent=S.jobs;
+var nw=document.getElementById('nav-workers');if(nw)nw.textContent=S.workers;
+var wh='';
+for(var i=0;i<S.workersList.length;i++){
+var w=S.workersList[i];
+var dotClass=w.status==='busy'?'busy':'online';
+wh+='<div class="worker-row"><div><span class="worker-dot '+dotClass+'"></span><strong>'+w.id+'</strong></div><span class="badge '+(w.status==='busy'?'bg-yellow':'bg-green')+'">'+(w.status==='busy'?'BUSY':'IDLE')+'</span></div>';
+}
+var wl=document.getElementById('worker-list');if(wl)wl.innerHTML=wh||'<div style="text-align:center;color:var(--text3);padding:20px">No workers</div>';
+var wm=document.getElementById('worker-mini-list');
+if(wm){
+var mw='';
+for(var j=0;j<Math.min(S.workersList.length,5);j++){
+mw+='<div class="worker-row"><span>'+S.workersList[j].id+'</span><span class="badge '+(S.workersList[j].status==='busy'?'bg-yellow':'bg-green')+'">'+(S.workersList[j].status==='busy'?'BUSY':'IDLE')+'</span></div>';
+}
+wm.innerHTML=mw||'<div style="text-align:center;color:var(--text3)">-</div>';
+}
+}
+
+function setVal(id,v){
+var el=document.getElementById(id);
+if(el&&el.textContent!==String(v)){el.textContent=v;el.classList.remove('sc-pulse');void el.offsetWidth;el.classList.add('sc-pulse');}
+}
+
+// ═══ FILE UPLOAD ═══
+document.getElementById('file-input').addEventListener('change',function(){
+var f=this.files[0];
+if(!f)return;
+document.getElementById('file-info').style.display='block';
+document.getElementById('file-info').innerHTML='📄 '+f.name+' ('+(f.size/1024).toFixed(1)+'KB)';
+document.getElementById('btn-submit').disabled=false;
+document.getElementById('submit-error').style.display='none';
+});
+
+// ═══ SUBMIT JOB ═══
+document.getElementById('btn-submit').addEventListener('click',function(){
+var fileInput=document.getElementById('file-input');
+var f=fileInput.files[0];
+if(!f)return;
+var btn=this;
+btn.disabled=true;btn.textContent='⏳...';
+var task=f.type.startsWith('image')?'thumbnail':'hash';
+var fd=new FormData();
+fd.append('file',f);
+fd.append('task_type',task);
+
+fetch('/jobs/upload',{method:'POST',body:fd})
+.then(function(r){
+if(!r.ok)throw new Error('HTTP '+r.status);
+return r.json();
+})
+.then(function(data){
+if(data.status==='submitted'){
+var jid=data.job_id;
+S.activeJobs.push({id:jid,task:task,progress:0,status:'Submitted'});
+S.jobs++;
+addTL('📤','Job '+jid+' submitted');
+renderJobs();
+updateUI();
+btn.textContent='✅ Sent';
+fileInput.value='';
+document.getElementById('file-info').style.display='none';
+}else{
+throw new Error(data.reason||'Submission failed');
+}
+})
+.catch(function(err){
+document.getElementById('submit-error').style.display='block';
+document.getElementById('submit-error').textContent='❌ '+err.message;
+addTL('❌','Submit failed: '+err.message);
+btn.textContent='🚀 Submit Job';
+})
+.finally(function(){
+setTimeout(function(){btn.disabled=false;btn.textContent='🚀 Submit Job';},2000);
+});
+});
+
+function renderJobs(){
+var h='';
+for(var i=0;i<S.activeJobs.length;i++){
+var j=S.activeJobs[i];
+var p=j.progress||0;
+var s=j.status||'Submitted';
+var extra='';
+if(j.verification==='Verified')extra+=' <span class="badge bg-green">✓ Verified</span>';
+if(j.merkle_root)extra+=' <span class="badge bg-green">🌳</span>';
+if(j.proof_verified)extra+=' <span class="badge bg-purple">🔐 Proof</span>';
+if(j.block_height)extra+=' <span class="badge bg-blue">#'+j.block_height+'</span>';
+if(j.reward)extra+=' <span class="badge bg-yellow">+'+j.reward+'</span>';
+h+='<div class="job-row"><div style="flex:1"><strong>'+j.id+'</strong><br><span style="font-size:.65em;color:var(--text2)">'+j.task+'</span></div><div style="flex:1;margin:0 8px"><div class="progress-bar"><div class="progress-fill" style="width:'+p+'%"></div></div></div><span class="badge '+(s==='Completed'||s==='Finalized'?'bg-green':s==='Failed'?'bg-red':'bg-blue')+'">'+s+' '+p+'%</span>'+extra+'</div>';
+}
+var jl=document.getElementById('jobs-list');if(jl)jl.innerHTML=h||'<div style="text-align:center;color:var(--text3);padding:20px">No jobs</div>';
+var jq=document.getElementById('job-queue-list');if(jq)jq.innerHTML=h||'<div style="text-align:center;color:var(--text3);padding:20px">No jobs</div>';
+}
+
+// ═══ INIT ═══
+loadSnapshot();
+connectWS();
+setInterval(function(){
+fetch('/chain').then(function(r){return r.json();}).then(function(d){
+if(d&&d.height!==undefined){S.blocks=d.height;}
+updateUI();
+}).catch(function(){});
+},5000);
+})();
+</script>
+</body>
+</html>

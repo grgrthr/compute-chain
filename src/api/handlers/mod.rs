@@ -1,0 +1,39 @@
+pub mod chain;
+pub mod compute;
+pub mod contract;
+pub mod gpu;
+pub mod health;
+pub mod jobs;
+pub mod marketplace;
+pub mod miner;
+pub mod nft;
+pub mod p2p;
+pub mod stark;
+pub mod token;
+
+pub use chain::*;
+pub use compute::*;
+pub use contract::*;
+pub use gpu::*;
+pub use health::*;
+pub use jobs::*;
+pub use marketplace::*;
+pub use miner::*;
+pub use nft::*;
+pub use p2p::*;
+pub use stark::*;
+pub use token::*;
+pub struct AppState {
+    pub wallet: std::sync::Mutex<crate::crypto::wallet::Wallet>,
+    pub mempool: std::sync::Arc<crate::consensus::mempool::SharedMempool>,
+    pub miner_pool: std::sync::Mutex<crate::miner::MinerPool>,
+    pub gpu_miner: crate::miner::gpu::GpuMiner,
+    pub marketplace: std::sync::Mutex<crate::marketplace::Marketplace>,
+    pub p2p_handle: crate::p2p::P2PHandle,
+    pub consensus: std::sync::Arc<crate::consensus::network::ConsensusNetwork>,
+    pub token_engine: std::sync::Arc<crate::economic::token::TokenEngine>,
+    pub contract_storage: std::sync::Arc<crate::contract::storage::ContractStorage>,
+    pub nft_engine: std::sync::Arc<crate::economic::nft::NFTEngine>,
+    pub ws_server: std::sync::Arc<crate::websocket::WebSocketServer>,
+}
+pub mod browser_jobs;

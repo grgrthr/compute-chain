@@ -1,0 +1,9 @@
+/target/
+/chain_data/
+.env
+*.log
+/backups/
+/secrets/
+*.swp
+*~
+.DS_Store

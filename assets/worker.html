@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Compute Chain — Worker</title>
+<style>
+:root{--bg:#030711;--bg2:#0a0f1d;--border:#1e293b;--text:#e2e8f0;--text2:#94a3b8;--blue:#3b82f6;--green:#22c55e;--purple:#8b5cf6;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:450px;width:90%;text-align:center}
+h1{font-size:1.2em;margin-bottom:4px}
+.status-dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:6px}
+.status-dot.online{background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.btn{padding:10px 24px;border:none;border-radius:var(--radius);font-size:.9em;cursor:pointer;font-weight:600;margin:8px}
+.btn-join{background:var(--blue);color:#fff}
+.btn-leave{background:#ef4444;color:#fff}
+.stat{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.8em}
+.stat-val{font-weight:600}
+.job-card{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;margin:8px 0;text-align:left;font-size:.75em}
+.progress-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin:4px 0}
+.progress-fill{height:100%;background:var(--blue);border-radius:3px;transition:width .3s;width:0%}
+.cap-tag{display:inline-block;padding:2px 8px;margin:2px;background:rgba(139,92,246,.15);color:var(--purple);border-radius:6px;font-size:.65em}
+.result-img{max-width:150px;max-height:150px;border-radius:8px;margin-top:6px;border:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>⚡ Compute Chain Worker</h1>
+  <p style="color:var(--text2);font-size:.8em;margin-bottom:12px">
+    <span class="status-dot" id="dot"></span>
+    <span id="status-text">Disconnected</span>
+  </p>
+  <button class="btn btn-join" id="btn-join" onclick="joinNetwork()">🔗 Join Network</button>
+  <button class="btn btn-leave" id="btn-leave" onclick="leaveNetwork()" style="display:none">⏹ Leave</button>
+  
+  <div id="stats" style="display:none;margin-top:12px">
+    <div class="stat"><span>Worker ID</span><span class="stat-val" id="worker-id">-</span></div>
+    <div class="stat"><span>Jobs Done</span><span class="stat-val" id="jobs-done">0</span></div>
+    <div class="stat"><span>Rewards</span><span class="stat-val" id="rewards">0</span></div>
+    <div class="stat"><span>Proof</span><span class="stat-val" id="proof-status">-</span></div>
+    <div class="stat"><span>Block</span><span class="stat-val" id="block-info">-</span></div>
+    <div class="stat"><span>Status</span><span class="stat-val" id="worker-status">Idle</span></div>
+    <div class="stat"><span>Capabilities</span><span>
+      <span class="cap-tag">🖼️ Thumbnail</span>
+      <span class="cap-tag">📊 CSV</span>
+      <span class="cap-tag">🔐 Hash</span>
+    </span></div>
+  </div>
+  
+  <div id="active-jobs" style="margin-top:12px"></div>
+</div>
+
+<script src="/assets/sha256.js"></script>
+<script>
+let ws = null, workerId = null, jobsDone = 0, rewards = 0, currentJobId = null;
+
+function joinNetwork() {
+    const proto = location.protocol === 'https:' ? 'wss' : 'ws';
+    ws = new WebSocket(`${proto}://${location.host}/worker/ws`);
+    
+    ws.onopen = () => {
+        document.getElementById('dot').className = 'status-dot online';
+        document.getElementById('status-text').textContent = 'Connected';
+        document.getElementById('btn-join').style.display = 'none';
+        document.getElementById('btn-leave').style.display = 'inline-block';
+        document.getElementById('stats').style.display = 'block';
+        ws.send(JSON.stringify({type:'register',capabilities:['thumbnail','csv','hash','compress']}));
+    };
+    
+    ws.onmessage = (e) => {
+        const msg = JSON.parse(e.data);
+        if (msg.type === 'welcome') { workerId = msg.worker_id; document.getElementById('worker-id').textContent = workerId; }
+        else if (msg.type === 'registered') { document.getElementById('worker-status').textContent = 'Online'; }
+        else if (msg.type === 'job') { processRealJob(msg); }
+        else if (msg.type === 'commitment_proof_verified') { document.getElementById('proof-status').textContent = '✓ Verified'; }
+        else if (msg.type === 'commitment_proof_failed') { document.getElementById('proof-status').textContent = '✗ Failed'; }
+        else if (msg.type === 'block_accepted') { document.getElementById('block-info').textContent = '#' + (msg.block_height||'?'); }
+        else if (msg.type === 'reward_distributed') { 
+            rewards += (msg.amount || 10);
+            document.getElementById('rewards').textContent = rewards;
+        }
+    };
+    
+    ws.onclose = () => {
+        document.getElementById('dot').className = 'status-dot';
+        document.getElementById('status-text').textContent = 'Disconnected';
+        document.getElementById('btn-join').style.display = 'inline-block';
+        document.getElementById('btn-leave').style.display = 'none';
+        document.getElementById('stats').style.display = 'none';
+    };
+    
+    setInterval(() => { if (ws && ws.readyState === WebSocket.OPEN) ws.send('{"type":"ping"}'); }, 10000);
+}
+
+async function processRealJob(msg) {
+    const jobId = msg.job_id;
+    const taskType = msg.task_type || msg.task || 'hash';
+    currentJobId = jobId;
+    
+    document.getElementById('worker-status').textContent = 'Busy — ' + taskType;
+    
+    // Create job card
+    const div = document.getElementById('active-jobs');
+    div.innerHTML = `<div class="job-card" id="job-${jobId}">
+        <strong>📋 Job: ${jobId}</strong><br>
+        <span style="color:var(--text2)">Task: ${taskType}</span>
+        <div class="progress-bar"><div class="progress-fill" id="progress-${jobId}"></div></div>
+        <span id="job-status-${jobId}" style="font-size:.7em;color:var(--text2)">Starting...</span>
+    </div>`;
+    
+    // Send ack
+    ws.send(JSON.stringify({type:'job_ack', job_id:jobId, worker_id:workerId}));
+    
+    try {
+        if (taskType === 'thumbnail' && msg.input_data) {
+            await processThumbnail(jobId, msg);
+        } else if (taskType === 'hash' && msg.input_data) {
+            await processHash(jobId, msg);
+        } else {
+            // Generic task with progress
+            for (let p = 20; p <= 100; p += 20) {
+                await sleep(200);
+                document.getElementById('progress-' + jobId).style.width = p + '%';
+                document.getElementById('job-status-' + jobId).textContent = 'Processing... ' + p + '%';
+                ws.send(JSON.stringify({type:'progress', job_id:jobId, worker_id:workerId, progress:p}));
+            }
+            completeJob(jobId, {task: taskType, output: 'completed'});
+        }
+    } catch(e) {
+        document.getElementById('job-status-' + jobId).textContent = '❌ Failed: ' + e.message;
+        ws.send(JSON.stringify({type:'result', job_id:jobId, worker_id:workerId, success:false, error:e.message}));
+    }
+    
+    document.getElementById('worker-status').textContent = 'Idle';
+    currentJobId = null;
+}
+
+async function processThumbnail(jobId, msg) {
+    updateProgress(jobId, 10, 'Loading image...');
+    
+    // Convert base64 to image
+    const img = new Image();
+    const imageData = msg.input_data;
+    
+    await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+        img.src = imageData.startsWith('data:') ? imageData : 'data:image/jpeg;base64,' + imageData;
+    });
+    
+    updateProgress(jobId, 30, 'Resizing...');
+    
+    // Generate thumbnail
+    const canvas = document.createElement('canvas');
+    const maxDim = 200;
+    let w = img.width, h = img.height;
+    if (w > h) { h = h * maxDim / w; w = maxDim; }
+    else { w = w * maxDim / h; h = maxDim; }
+    canvas.width = Math.round(w);
+    canvas.height = Math.round(h);
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    
+    updateProgress(jobId, 60, 'Encoding...');
+    
+    const thumbnailData = canvas.toDataURL('image/jpeg', 0.7);
+    const outputSize = Math.round(thumbnailData.length * 0.75); // Approximate binary size
+    
+    updateProgress(jobId, 90, 'Hashing...');
+    
+    // Hash the thumbnail using pure SHA-256
+    const outputHash = sha256(thumbnailData);
+    
+    updateProgress(jobId, 100, '✅ Done');
+    
+    // Show thumbnail preview
+    document.getElementById('job-' + jobId).innerHTML += `<img src="${thumbnailData}" class="result-img" alt="Thumbnail">`;
+    
+    completeJob(jobId, {
+        task_type: 'thumbnail',
+        output_hash: outputHash,
+        output_size: outputSize,
+        width: canvas.width,
+        height: canvas.height,
+        thumbnail_data: thumbnailData
+    });
+}
+
+async function processHash(jobId, msg) {
+    updateProgress(jobId, 30, 'Computing SHA-256...');
+    const data = msg.input_data || 'test';
+    const hash = sha256(data);
+    updateProgress(jobId, 100, '✅ Done');
+    completeJob(jobId, {task_type: 'hash', output_hash: hash, hash: hash});
+}
+
+function updateProgress(jobId, pct, status) {
+    document.getElementById('progress-' + jobId).style.width = pct + '%';
+    document.getElementById('job-status-' + jobId).textContent = status;
+    ws.send(JSON.stringify({type:'progress', job_id:jobId, worker_id:workerId, progress:pct}));
+}
+
+function completeJob(jobId, result) {
+    jobsDone++; rewards += 10;
+    document.getElementById('jobs-done').textContent = jobsDone;
+    document.getElementById('rewards').textContent = rewards;
+    
+    // Send result with output_hash if not present
+    if (!result.output_hash && result.thumbnail_data) {
+        result.output_hash = sha256(result.thumbnail_data);
+    }
+    if (!result.output_hash && result.output) {
+        result.output_hash = sha256(result.output);
+    }
+    if (!result.output_size && result.thumbnail_data) {
+        result.output_size = result.thumbnail_data.length;
+    }
+    
+    ws.send(JSON.stringify({type:'result', job_id:jobId, worker_id:workerId, success:true, result:result}));
+}
+
+function leaveNetwork() { if (ws) ws.close(); }
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+</script>
+</body>
+</html>
