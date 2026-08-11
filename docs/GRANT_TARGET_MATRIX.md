@@ -39,3 +39,10 @@
 | Fit | Open infrastructure for verifiable distributed computation |
 | Proposed scope | Multi-worker coordination, protocol hardening, public testnet |
 | Risks | May require European connection; testnet scope must match program priorities |
+
+## Research Summary
+
+- Filecoin: https://fil.org/grants/ — rolling applications, open-source required, online form
+- NLnet: https://nlnet.nl/commons/ — periodic calls, EUR 5K-50K range, individuals eligible
+- Both: MIT license qualifies, no incorporation required, written applications accepted
+- Deadlines: Filecoin rolling; NLnet — check current call
