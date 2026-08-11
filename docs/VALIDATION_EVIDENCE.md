@@ -1,8 +1,8 @@
-# Compute Chain — Investor Evidence Pack
+# Compute Chain — Validation Evidence
 
 **Date:** 2026-08-11
 **Version:** 0.1.0-demo
-**Status:** Verified — ready for investor presentation
+**Status:** Verified — reproducible evidence
 
 ---
 
@@ -50,7 +50,7 @@ cargo test   -> PASS (278 unit + 1 integration = 279 passed, 0 failed)
 ## E. Live Demo Verification
 
 Two real devices on the same local network:
-- Laptop (Linux): Server + Dashboard at http://IP:3000/investor
+- Laptop (Linux): Server + Dashboard
 - Phone (Android): Browser Worker at http://IP:3000/worker
 
 Server starts and displays Dashboard, Worker, and Health endpoints.
@@ -108,7 +108,7 @@ cargo build
 ./target/debug/compute_chain
 
 Device 2: http://SERVER_IP:3000/worker -> Join Network
-Device 1: http://SERVER_IP:3000/investor -> Marketplace -> Upload -> Submit
+Device 1: http://SERVER_IP:3000/investor — Marketplace — Upload — Submit
 
 ---
 
@@ -125,4 +125,4 @@ Device 1: http://SERVER_IP:3000/investor -> Marketplace -> Upload -> Submit
 
 Document created: 2026-08-11
 Core code changes: NONE
-Next stage: Pitch Deck (not started)
+Next stage: See PROJECT_OVERVIEW.md

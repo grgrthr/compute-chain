@@ -1,4 +1,4 @@
-# Investor Demo — Step by Step
+# Compute Chain — Demonstration Guide
 
 ## Requirements
 - Device 1: Server (Linux/Mac/Windows)

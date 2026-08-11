@@ -1,7 +1,7 @@
 # Compute Chain — Verifiable Compute Prototype
 
 **Version:** 0.1.0-demo
-**Status:** Investor Demo — working prototype
+**Status:** Working prototype
 
 ## What This Is
 Compute Chain demonstrates verifiable distributed compute: a real browser worker

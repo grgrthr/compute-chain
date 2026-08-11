@@ -1,8 +1,8 @@
-# Compute Chain — Investor Pitch Deck
+# Compute Chain — Project Overview
 
 **Version:** 0.1.0-demo
 **Date:** 2026-08-11
-**Status:** Prototype — Investor Demo
+**Status:** Working Prototype
 
 ---
 
@@ -11,10 +11,9 @@
 # Compute Chain
 ## Verifiable Distributed Compute
 
-**Investor Demo — 0.1.0-demo**
+**Prototype — 0.1.0-demo**
 
 A working prototype demonstrating verifiable compute with real browser workers.
-
 
 ---
 
@@ -28,7 +27,6 @@ Compute Chain explores a different approach:
 - Real devices — phones and laptops as workers, not specialized hardware
 
 "What if computation itself could be verified and rewarded?"
-
 
 ---
 
@@ -47,7 +45,6 @@ BROWSER WORKERS -> REAL COMPUTE -> VERIFICATION -> PROOF -> REWARD
 
 The demo proves the core pipeline. Production scale is the next phase.
 
-
 ---
 
 ## Slide 4: What Exists Today
@@ -58,10 +55,9 @@ Job Submission -> Browser Worker -> Real Execution -> Result Verified -> Merkle 
 
 All components built and tested.
 
-
 ---
 
-## Slide 5: Live Demo Evidence
+## Slide 5: Validation Evidence
 
 Verified on two real devices.
 
@@ -74,10 +70,9 @@ Verified on two real devices.
 | Dashboard | Updated live, no refresh needed |
 | Tests passing | 278/278 (0 failures) |
 
-Evidence: docs/INVESTOR_EVIDENCE.md
+Evidence: docs/VALIDATION_EVIDENCE.md
 Video: https://youtube.com/shorts/_CMj4qW8IQM
 Repository: https://github.com/grgrthr/compute-chain
-
 
 ---
 
@@ -91,7 +86,6 @@ input hash, output hash, worker ID, task type, job ID.
 It does NOT prove JavaScript execution inside the browser.
 
 This commitment proof demonstrates cryptographic binding of verified results.
-
 
 ---
 
@@ -107,8 +101,7 @@ This commitment proof demonstrates cryptographic binding of verified results.
 | Security audit | Not performed |
 | Performance benchmarks | Not measured |
 
-These are engineering milestones for the next phase — not failures.
-
+These are engineering milestones for the next phase.
 
 ---
 
@@ -118,10 +111,9 @@ CURRENT PROTOTYPE -> Technical Hardening -> Multi-Node Consensus -> Authenticati
 
 Detailed engineering plan available upon request.
 
-
 ---
 
-## Slide 9: Why Now / Why This Matters
+## Slide 9: Why This Matters
 
 - Demand for compute is growing — AI, scientific computing, rendering
 - Distributed compute offers an alternative to centralized cloud
@@ -131,10 +123,9 @@ Detailed engineering plan available upon request.
 
 The infrastructure exists. The prototype works. The timing is right.
 
-
 ---
 
-## Slide 10: Investor Takeaway
+## Slide 10: Key Takeaways
 
 1. A working end-to-end prototype exists. Real browser workers execute real workloads through verification, proof, block acceptance, and reward — all visible live.
 
@@ -147,5 +138,5 @@ The infrastructure exists. The prototype works. The timing is right.
 ## Links
 
 - GitHub: https://github.com/grgrthr/compute-chain
-- Evidence: docs/INVESTOR_EVIDENCE.md
+- Evidence: docs/VALIDATION_EVIDENCE.md
 - Video: https://youtube.com/shorts/_CMj4qW8IQM
