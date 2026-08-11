@@ -31,4 +31,8 @@ Device 2: Open `http://SERVER_IP:3000/worker` → Join Network
 Dashboard: `http://SERVER_IP:3000/investor`
 
 ## License
-MIT License — Copyright (c) 2026 Ismail Abdo
+Licensed under either of:
+- MIT License — Copyright (c) 2026 Ismail Abdo
+- Apache License 2.0 — Copyright 2026 Ismail Abdo
+
+SPDX-License-Identifier: MIT OR Apache-2.0

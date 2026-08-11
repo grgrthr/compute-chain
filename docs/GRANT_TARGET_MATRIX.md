@@ -12,7 +12,7 @@
 | Target amount | $30,000 (max $50,000 per project) |
 | Eligibility | Open-source projects advancing the Filecoin ecosystem; self-managed teams |
 | Geographic restrictions | None verified from official source |
-| License requirement | MIT AND Apache 2.0 (dual license) |
+| License requirement | MIT AND Apache 2.0 (dual license) — SATISFIED |
 | Application method | Submit proposal via Filecoin devgrants GitHub repository |
 | Review process | 3-month cycle: preliminary results next month, final decision following month |
 | Interview/call | Not verified from official source |
@@ -21,7 +21,7 @@
 | Fit | Compute Chain provides verifiable compute infrastructure; proposed work integrates Filecoin data identity (CID) with verifiable computation pipelines |
 | Proposed scope | CID-aware job schema, data retrieval binding, compute-on-data verification, proof commitment integration, open-source deliverables |
 | Risks | Dual-license requirement not yet satisfied (MIT only); no existing Filecoin integration code; prototype is single-node |
-| License compliance | NOT READY — Apache 2.0 dual license required but not present |
+| License compliance | READY — MIT + Apache 2.0 dual license present |
 
 ## NLnet / NGI Zero Commons Fund
 
