@@ -3,9 +3,13 @@
 ## Repository
 
 - URL: https://github.com/grgrthr/compute-chain
-- Current HEAD: befaec5
 - License: MIT — Copyright (c) 2026 Ismail Abdo
 - Language: Rust (92.7%), HTML (6%)
+
+## Evidence Capture
+
+- Evidence Capture Commit: a9264c3 (original demo validation)
+- Current Repository HEAD: 1565279
 
 ## Build Status
 
