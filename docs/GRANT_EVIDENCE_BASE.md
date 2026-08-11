@@ -3,7 +3,7 @@
 ## Repository
 
 - URL: https://github.com/grgrthr/compute-chain
-- Current HEAD: 59a36f7
+- Current HEAD: befaec5
 - License: MIT — Copyright (c) 2026 Ismail Abdo
 - Language: Rust (92.7%), HTML (6%)
 
