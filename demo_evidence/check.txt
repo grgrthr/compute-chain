@@ -1,0 +1,28 @@
+warning: use of deprecated function `base64::encode`: Use Engine::encode
+   --> src/api/handlers/jobs.rs:169:35
+    |
+169 |             "input_data": base64::encode(&file_bytes),
+    |                                   ^^^^^^
+    |
+    = note: `#[warn(deprecated)]` on by default
+
+warning: variable does not need to be mutable
+   --> src/api/worker_ws.rs:195:25
+    |
+195 |     ws.on_upgrade(move |mut socket| handle_events(socket))
+    |                         ----^^^^^^
+    |                         |
+    |                         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `worker_id`
+  --> src/node/event_handler.rs:39:60
+   |
+39 | ...ompleted(job_id: &str, worker_id: &str, ctx: &EventContext) {
+   |                           ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_worker_id`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `compute_chain` (bin "compute_chain") generated 3 warnings (run `cargo fix --bin "compute_chain" -p compute_chain` to apply 2 suggestions)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 17.10s

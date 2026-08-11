@@ -1,0 +1,911 @@
+nohup: ignoring input
+[2m2026-08-10T08:19:08.408208Z[0m [32m INFO[0m ThreadId(01) Compute Chain v3.5.0
+[2m2026-08-10T08:19:08.497990Z[0m [32m INFO[0m ThreadId(01) Starting on port 3000...
+
+╔══════════════════════════════════════════════════════════════╗
+║  COMPUTE CHAIN — v3.5.0                                    ║
+╠══════════════════════════════════════════════════════════════╣
+║  📊 Dashboard:   http://localhost:3000/investor              ║
+║  🚀 Demo:        http://localhost:3000/demo                  ║
+║  🔗 Worker:      http://localhost:3000/worker                ║
+║  ❤️  Health:      http://localhost:3000/health                ║
+╚══════════════════════════════════════════════════════════════╝
+
+[2m2026-08-10T08:19:08.498508Z[0m [32m INFO[0m ThreadId(01) 📂 No peers file found, starting fresh
+[2m2026-08-10T08:19:08.498655Z[0m [32m INFO[0m ThreadId(01) 🔗 Auto-dial list: 2 peers
+[2m2026-08-10T08:19:08.504031Z[0m [32m INFO[0m ThreadId(01) 📢 Gossipsub subscribed to topics: compute-chain/blocks, compute-chain/transactions, compute-chain/sync, compute-chain/pbft
+[2m2026-08-10T08:19:08.506925Z[0m [32m INFO[0m ThreadId(01) [3mlocal_peer_id[0m[2m=[0m12D3KooWKJgUZgtxZcWYGAETTytBpTk4Tc6545QAShPiHzM4u5s2
+[2m2026-08-10T08:19:08.507635Z[0m [32m INFO[0m ThreadId(01) Peer ID: 12D3KooWKJgUZgtxZcWYGAETTytBpTk4Tc6545QAShPiHzM4u5s2
+[2m2026-08-10T08:19:08.507838Z[0m [32m INFO[0m ThreadId(01) Listening on /ip4/0.0.0.0/tcp/5000
+[2m2026-08-10T08:19:08.508292Z[0m [32m INFO[0m ThreadId(01) P2P Actor spawned on port 5000
+[2m2026-08-10T08:19:08.508438Z[0m [32m INFO[0m ThreadId(01) 🆔 Node: node_alpha ("Producer") leader=true
+💾 load_from_disk: no file found
+🔧 TokenEngine::new() - created with genesis account
+💾 Token state saved to ./chain_data/tokens
+Contracts loaded: 1 contracts (metadata only)
+🌍 Genesis block created: height=0, hash=0000000000000000genesis_block_compute_chain
+[2m2026-08-10T08:19:08.509282Z[0m [32m INFO[0m ThreadId(01) 🔧 PBFT initialized with 3 validators, f=0
+[2m2026-08-10T08:19:08.509371Z[0m [33m WARN[0m ThreadId(03) 🔍 Kademlia bootstrap failed: No known peers. (single node mode)
+[2m2026-08-10T08:19:08.511188Z[0m [32m INFO[0m ThreadId(02) creating instance on iface address [3maddress[0m[2m=[0m192.168.1.103
+[2m2026-08-10T08:19:08.511651Z[0m [32m INFO[0m ThreadId(02) creating instance on iface address [3maddress[0m[2m=[0m172.17.0.1
+[2m2026-08-10T08:19:08.511887Z[0m [32m INFO[0m ThreadId(02) creating instance on iface address [3maddress[0m[2m=[0m172.18.0.1
+[2m2026-08-10T08:19:08.512599Z[0m [32m INFO[0m ThreadId(01) 🛡️ API: http://localhost:3000, P2P: 5000, WS: 9000
+[2m2026-08-10T08:19:13.511265Z[0m [32m INFO[0m ThreadId(02) Dialing peer: /ip4/127.0.0.1/tcp/5001
+[2m2026-08-10T08:19:13.511528Z[0m [32m INFO[0m ThreadId(02) Dialing peer: /ip4/127.0.0.1/tcp/5002
+[2m2026-08-10T08:19:13.512290Z[0m [31mERROR[0m ThreadId(03) ❌ OutgoingConnectionError: peer=None error=Transport([(/ip4/127.0.0.1/tcp/5002, Other(Custom { kind: Other, error: Left(Left(Os { code: 111, kind: ConnectionRefused, message: "Connection refused" })) }))])
+[2m2026-08-10T08:19:13.512655Z[0m [31mERROR[0m ThreadId(03) ❌ OutgoingConnectionError: peer=None error=Transport([(/ip4/127.0.0.1/tcp/5001, Other(Custom { kind: Other, error: Left(Left(Os { code: 111, kind: ConnectionRefused, message: "Connection refused" })) }))])
+[2m2026-08-10T08:33:19.070447Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:33:19.070626Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:33:19.070690Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:33:19.070797Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:33:19.070859Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:33:19.070910Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:33:24.065971Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:33:24.066135Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:33:24.066187Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:33:24.066238Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:33:24.066291Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:33:24.066337Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:33:29.496840Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:33:29.497004Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:33:29.497056Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:33:29.497105Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:33:29.497157Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:33:29.497204Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:33:34.509806Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:33:34.509967Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:33:34.510019Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:33:34.510069Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:33:34.510122Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:33:34.510168Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:33:39.495821Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:33:39.495985Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:33:39.496031Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:33:39.496051Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:33:39.496071Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:33:39.496114Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:33:44.510597Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:33:44.510755Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:33:44.510807Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:33:44.510853Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:33:44.510874Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:33:44.510891Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:33:49.514649Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:33:49.514799Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:33:49.514855Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:33:49.514909Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:33:49.514966Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:33:49.515056Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:33:54.506777Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:33:54.506935Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:33:54.506986Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:33:54.507036Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:33:54.507089Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:33:54.507196Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:33:59.500090Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:33:59.500251Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:33:59.500302Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:33:59.500353Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:33:59.500405Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:33:59.500451Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:04.517869Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:04.518023Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:04.518074Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:04.518124Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:04.518177Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:04.518224Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:09.497341Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:09.497418Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:09.497437Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:09.497457Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:09.497477Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:09.497494Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:14.548200Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:14.548361Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:14.548412Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:14.548463Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:14.548516Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:14.548563Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:19.504939Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:19.505097Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:19.505149Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:19.505200Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:19.505253Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:19.505299Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:24.520422Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:24.520593Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:24.520697Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:24.520753Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:24.520807Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:24.520853Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:29.070534Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:29.070686Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:29.070737Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:29.070788Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:29.070841Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:29.070888Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:34.074265Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:34.074429Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:34.074481Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:34.074531Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:34.074583Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:34.074629Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:39.060457Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:39.060605Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:39.060656Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:39.060705Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:39.060758Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:39.060804Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:44.073370Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:44.073531Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:44.073583Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:44.073633Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:44.073685Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:44.073732Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:49.072126Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:49.072284Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:49.072335Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:49.072385Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:49.072437Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:49.072483Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:54.065154Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:54.065302Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:54.065352Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:54.065402Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:54.065495Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:54.065545Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:34:59.093102Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:34:59.093264Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:34:59.093324Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:34:59.093380Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:34:59.093438Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:34:59.093489Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:04.077426Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:04.077590Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:04.077647Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:04.077702Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:04.077759Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:04.077809Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:09.057174Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:09.057339Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:09.057395Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:09.057451Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:09.057509Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:09.057559Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:13.510543Z[0m [32m INFO[0m ThreadId(02) 🔗 Browser worker connected: worker_f7ba
+[2m2026-08-10T08:35:13.511169Z[0m [32m INFO[0m ThreadId(02) 📋 Worker registered: worker_f7ba (1)
+[2m2026-08-10T08:35:13.541188Z[0m [32m INFO[0m ThreadId(02) 📋 Worker worker_f7ba registered with ["thumbnail", "csv", "hash", "compress"]
+[2m2026-08-10T08:35:14.051404Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:14.051481Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:14.051502Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:14.051524Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:14.051546Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:14.051565Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:19.068483Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:19.068645Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:19.068702Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:19.068757Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:19.068814Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:19.068865Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:24.071486Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:24.071657Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:24.071731Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:24.071779Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:24.071801Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:24.071854Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:29.095982Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:29.096143Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:29.096195Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:29.096244Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:29.096297Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:29.096345Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:34.496153Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:34.496318Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:34.496373Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:34.496429Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:34.496487Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:34.496538Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:39.063871Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:39.064032Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:39.064089Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:39.064144Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:39.064202Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:39.064253Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:43.861933Z[0m [32m INFO[0m ThreadId(02) 📋 BrowserJob registered: job_6a798d5f (thumbnail)
+[2m2026-08-10T08:35:44.053090Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:44.053244Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:44.053299Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:44.053354Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:44.053412Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:44.053456Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:44.734167Z[0m [32m INFO[0m ThreadId(03) 📤 Worker worker_f7ba completed job job_6a798d5f
+[2m2026-08-10T08:35:44.739193Z[0m [32m INFO[0m ThreadId(03) ✅ BrowserJob job_6a798d5f verified, merkle_root=9f8267c657170939
+[2m2026-08-10T08:35:44.739246Z[0m [32m INFO[0m ThreadId(03) 📊 BrowserJob job_6a798d5f processed: status=Completed, verification=Some("Verified")
+[2m2026-08-10T08:35:44.745913Z[0m [32m INFO[0m ThreadId(03) 🔐 BrowserJob job_6a798d5f commitment proof verified
+[2m2026-08-10T08:35:44.746478Z[0m [32m INFO[0m ThreadId(03) ⛓️ BrowserJob job_6a798d5f block accepted: height=1
+[2m2026-08-10T08:35:44.746677Z[0m [32m INFO[0m ThreadId(03) 💰 BrowserJob job_6a798d5f reward distributed: 10 tokens to worker_f7ba
+[2m2026-08-10T08:35:44.746804Z[0m [32m INFO[0m ThreadId(03) ✅ BrowserJob job_6a798d5f finalized: block=Some(1), reward=Some(10)
+[2m2026-08-10T08:35:49.076703Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:49.076868Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:49.076964Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:49.076986Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:49.077006Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:49.077040Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:54.086986Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:54.087189Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:54.087891Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:54.087971Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:54.088025Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:54.088071Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:35:59.052363Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:35:59.052516Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:35:59.052566Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:35:59.052616Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:35:59.052668Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:35:59.052714Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:04.099603Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:04.099766Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:04.099817Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:04.099867Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:04.099919Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:04.099964Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:07.598825Z[0m [32m INFO[0m ThreadId(02) 📋 BrowserJob registered: job_6a798d77 (thumbnail)
+[2m2026-08-10T08:36:08.931467Z[0m [32m INFO[0m ThreadId(03) 📤 Worker worker_f7ba completed job job_6a798d77
+[2m2026-08-10T08:36:08.936478Z[0m [32m INFO[0m ThreadId(03) ✅ BrowserJob job_6a798d77 verified, merkle_root=14a150f014d18b0e
+[2m2026-08-10T08:36:08.936599Z[0m [32m INFO[0m ThreadId(03) 📊 BrowserJob job_6a798d77 processed: status=Completed, verification=Some("Verified")
+[2m2026-08-10T08:36:08.942916Z[0m [32m INFO[0m ThreadId(03) 🔐 BrowserJob job_6a798d77 commitment proof verified
+[2m2026-08-10T08:36:08.943333Z[0m [32m INFO[0m ThreadId(03) ⛓️ BrowserJob job_6a798d77 block accepted: height=2
+[2m2026-08-10T08:36:08.943516Z[0m [32m INFO[0m ThreadId(03) 💰 BrowserJob job_6a798d77 reward distributed: 10 tokens to worker_f7ba
+[2m2026-08-10T08:36:08.943632Z[0m [32m INFO[0m ThreadId(03) ✅ BrowserJob job_6a798d77 finalized: block=Some(2), reward=Some(10)
+[2m2026-08-10T08:36:09.051819Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:09.051972Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:09.052028Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:09.052083Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:09.052140Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:09.052192Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:14.072872Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:14.073078Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:14.073132Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:14.073182Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:14.073234Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:14.073279Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:19.087788Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:19.087858Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:19.087878Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:19.087897Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:19.087916Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:19.087934Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:24.077142Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:24.077304Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:24.077355Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:24.077405Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:24.077457Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:24.077503Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:29.078481Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:29.078641Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:29.078693Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:29.078745Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:29.078798Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:29.078845Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:34.102298Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:34.102463Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:34.102514Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:34.102564Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:34.102616Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:34.102663Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:38.515640Z[0m [32m INFO[0m ThreadId(03) 📋 BrowserJob registered: job_6a798d96 (thumbnail)
+[2m2026-08-10T08:36:39.060466Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:39.060617Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:39.060668Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:39.060717Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:39.060769Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:39.060816Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:40.602700Z[0m [32m INFO[0m ThreadId(02) 📤 Worker worker_f7ba completed job job_6a798d96
+[2m2026-08-10T08:36:40.607933Z[0m [32m INFO[0m ThreadId(02) ✅ BrowserJob job_6a798d96 verified, merkle_root=6909bcc465cd0c7f
+[2m2026-08-10T08:36:40.608005Z[0m [32m INFO[0m ThreadId(02) 📊 BrowserJob job_6a798d96 processed: status=Completed, verification=Some("Verified")
+[2m2026-08-10T08:36:40.612551Z[0m [32m INFO[0m ThreadId(03) 🔐 BrowserJob job_6a798d96 commitment proof verified
+[2m2026-08-10T08:36:40.612706Z[0m [32m INFO[0m ThreadId(03) ⛓️ BrowserJob job_6a798d96 block accepted: height=3
+[2m2026-08-10T08:36:40.612770Z[0m [32m INFO[0m ThreadId(03) 💰 BrowserJob job_6a798d96 reward distributed: 10 tokens to worker_f7ba
+[2m2026-08-10T08:36:40.612810Z[0m [32m INFO[0m ThreadId(03) ✅ BrowserJob job_6a798d96 finalized: block=Some(3), reward=Some(10)
+[2m2026-08-10T08:36:44.078752Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:44.078825Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:44.078844Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:44.078863Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:44.078884Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:44.078901Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:49.066829Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:49.066990Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:49.067041Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:49.067138Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:49.067207Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:49.067254Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:54.059828Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:54.059982Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:54.060033Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:54.060083Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:54.060134Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:54.060181Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:59.175953Z[0m [32m INFO[0m ThreadId(03) 📋 BrowserJob registered: job_6a798dab (thumbnail)
+[2m2026-08-10T08:36:59.176953Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:36:59.177013Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:36:59.177031Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:36:59.177049Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:36:59.177069Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:36:59.177086Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:36:59.999944Z[0m [32m INFO[0m ThreadId(02) 📤 Worker worker_f7ba completed job job_6a798dab
+[2m2026-08-10T08:37:00.005181Z[0m [32m INFO[0m ThreadId(02) ✅ BrowserJob job_6a798dab verified, merkle_root=64c5a6b0387c9eb7
+[2m2026-08-10T08:37:00.005230Z[0m [32m INFO[0m ThreadId(02) 📊 BrowserJob job_6a798dab processed: status=Completed, verification=Some("Verified")
+[2m2026-08-10T08:37:00.010545Z[0m [32m INFO[0m ThreadId(02) 🔐 BrowserJob job_6a798dab commitment proof verified
+[2m2026-08-10T08:37:00.010915Z[0m [32m INFO[0m ThreadId(02) ⛓️ BrowserJob job_6a798dab block accepted: height=4
+[2m2026-08-10T08:37:00.011083Z[0m [32m INFO[0m ThreadId(02) 💰 BrowserJob job_6a798dab reward distributed: 10 tokens to worker_f7ba
+[2m2026-08-10T08:37:00.011290Z[0m [32m INFO[0m ThreadId(02) ✅ BrowserJob job_6a798dab finalized: block=Some(4), reward=Some(10)
+[2m2026-08-10T08:37:04.071014Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:04.071224Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:04.071279Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:04.071330Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:04.071382Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:04.071428Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:09.088452Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:09.088617Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:09.088669Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:09.088719Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:09.088771Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:09.088817Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:14.097844Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:14.098001Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:14.098051Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:14.098101Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:14.098154Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:14.098200Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:17.012395Z[0m [32m INFO[0m ThreadId(02) 📋 BrowserJob registered: job_6a798dbc (thumbnail)
+[2m2026-08-10T08:37:18.125095Z[0m [32m INFO[0m ThreadId(03) 📤 Worker worker_f7ba completed job job_6a798dbc
+[2m2026-08-10T08:37:18.129971Z[0m [32m INFO[0m ThreadId(03) ✅ BrowserJob job_6a798dbc verified, merkle_root=32c7f76a14639483
+[2m2026-08-10T08:37:18.130099Z[0m [32m INFO[0m ThreadId(03) 📊 BrowserJob job_6a798dbc processed: status=Completed, verification=Some("Verified")
+[2m2026-08-10T08:37:18.134473Z[0m [32m INFO[0m ThreadId(02) 🔐 BrowserJob job_6a798dbc commitment proof verified
+[2m2026-08-10T08:37:18.134631Z[0m [32m INFO[0m ThreadId(02) ⛓️ BrowserJob job_6a798dbc block accepted: height=5
+[2m2026-08-10T08:37:18.134698Z[0m [32m INFO[0m ThreadId(02) 💰 BrowserJob job_6a798dbc reward distributed: 10 tokens to worker_f7ba
+[2m2026-08-10T08:37:18.134743Z[0m [32m INFO[0m ThreadId(02) ✅ BrowserJob job_6a798dbc finalized: block=Some(5), reward=Some(10)
+[2m2026-08-10T08:37:19.076782Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:19.076938Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:19.076993Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:19.077048Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:19.077107Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:19.077158Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:24.059669Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:24.059830Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:24.059886Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:24.059942Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:24.060044Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:24.060094Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:29.076487Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:29.076647Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:29.076698Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:29.076748Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:29.076799Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:29.076845Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:34.070825Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:34.070985Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:34.071037Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:34.071086Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:34.071199Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:34.071247Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:39.073348Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:39.073514Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:39.073567Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:39.073618Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:39.073670Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:39.073716Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:40.804689Z[0m [32m INFO[0m ThreadId(03) 📋 BrowserJob registered: job_6a798dd4 (thumbnail)
+[2m2026-08-10T08:37:42.694560Z[0m [32m INFO[0m ThreadId(02) 📤 Worker worker_f7ba completed job job_6a798dd4
+[2m2026-08-10T08:37:42.700970Z[0m [32m INFO[0m ThreadId(02) ✅ BrowserJob job_6a798dd4 verified, merkle_root=79cb03ae6777fd5a
+[2m2026-08-10T08:37:42.701018Z[0m [32m INFO[0m ThreadId(02) 📊 BrowserJob job_6a798dd4 processed: status=Completed, verification=Some("Verified")
+[2m2026-08-10T08:37:42.707713Z[0m [32m INFO[0m ThreadId(02) 🔐 BrowserJob job_6a798dd4 commitment proof verified
+[2m2026-08-10T08:37:42.708136Z[0m [32m INFO[0m ThreadId(02) ⛓️ BrowserJob job_6a798dd4 block accepted: height=6
+[2m2026-08-10T08:37:42.708308Z[0m [32m INFO[0m ThreadId(02) 💰 BrowserJob job_6a798dd4 reward distributed: 10 tokens to worker_f7ba
+[2m2026-08-10T08:37:42.708392Z[0m [32m INFO[0m ThreadId(02) ✅ BrowserJob job_6a798dd4 finalized: block=Some(6), reward=Some(10)
+[2m2026-08-10T08:37:44.104258Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:44.104408Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:44.104458Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:44.104507Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:44.104560Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:44.104606Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:49.062087Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:49.062248Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:49.062300Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:49.062390Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:49.062444Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:49.062491Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:54.080707Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:54.080794Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:54.080816Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:54.080837Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:54.080859Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:54.080878Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:37:59.080346Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:37:59.080512Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:37:59.080570Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:37:59.080625Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:37:59.080683Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:37:59.080735Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:04.525732Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:04.525897Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:04.525999Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:04.526024Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:04.526046Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:04.526091Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:09.498712Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:09.498873Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:09.498929Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:09.498985Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:09.499042Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:09.499141Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:14.513947Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:14.514106Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:14.514162Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:14.514217Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:14.514274Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:14.514326Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:19.512781Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:19.512944Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:19.513000Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:19.513055Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:19.513112Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:19.513210Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:24.528803Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:24.528947Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:24.528993Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:24.529037Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:24.529084Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:24.529126Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:29.522983Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:29.523231Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:29.523298Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:29.523354Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:29.523411Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:29.523462Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:34.507565Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:34.507728Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:34.507784Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:34.507840Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:34.507896Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:34.507948Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:39.494287Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:39.494453Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:39.494511Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:39.494568Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:39.494625Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:39.494676Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:44.517043Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:44.517204Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:44.517277Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:44.517310Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:44.517333Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:44.517365Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:49.497722Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:49.497884Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:49.497941Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:49.497996Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:49.498054Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:49.498104Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:54.521648Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:54.521807Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:54.521906Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:54.521960Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:54.522012Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:54.522058Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:38:59.511047Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T08:38:59.511246Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T08:38:59.511299Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T08:38:59.511349Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T08:38:59.511401Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T08:38:59.511447Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T08:39:08.909229Z[0m [32m INFO[0m ThreadId(02) 📋 Worker unregistered: worker_f7ba (0)
+[2m2026-08-10T08:39:08.909313Z[0m [32m INFO[0m ThreadId(02) 🔌 Browser worker disconnected: worker_f7ba
+[2m2026-08-10T10:23:36.887648Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:23:36.887825Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:23:36.887882Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:23:36.887938Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:23:36.887996Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:23:36.888047Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:23:41.900486Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:23:41.900652Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:23:41.900728Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:23:41.900786Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:23:41.900844Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:23:41.900895Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:23:46.831348Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:23:46.831505Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:23:46.831561Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:23:46.831615Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:23:46.831672Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:23:46.831723Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:23:51.848470Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:23:51.848631Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:23:51.848687Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:23:51.848742Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:23:51.848799Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:23:51.848849Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:23:56.850423Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:23:56.850588Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:23:56.850696Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:23:56.850751Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:23:56.850804Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:23:56.850851Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:24:01.855064Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:24:01.855273Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:24:01.855326Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:24:01.855376Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:24:01.855429Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:24:01.855475Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:24:06.884018Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:24:06.884177Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:24:06.884228Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:24:06.884278Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:24:06.884330Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:24:06.884376Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:24:11.849210Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:24:11.849373Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:24:11.849430Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:24:11.849485Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:24:11.849542Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:24:11.849594Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:24:16.840119Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:24:16.840283Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:24:16.840339Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:24:16.840394Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:24:16.840451Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:24:16.840502Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:24:21.852585Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:24:21.852739Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:24:21.852857Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:24:21.852920Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:24:21.852978Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:24:21.853029Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:24:26.828010Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:24:26.828168Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:24:26.828224Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:24:26.828279Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:24:26.828337Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:24:26.828431Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:24:31.838384Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:24:31.838538Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:24:31.838589Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:24:31.838638Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:24:31.838691Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:24:31.838737Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:24:36.837895Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:24:36.838055Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:24:36.838107Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:24:36.838154Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:24:36.838175Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:24:36.838192Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:32:47.384758Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:32:47.384926Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:32:47.384983Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:32:47.385039Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:32:47.385112Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:32:47.385167Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:32:48.015699Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:32:48.015854Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:32:48.015886Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:32:48.015946Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:32:48.016004Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:32:48.016056Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:32:54.889357Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:32:54.889432Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:32:54.889453Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:32:54.889474Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:32:54.889497Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:32:54.889515Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:00.707501Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:00.707656Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:00.707677Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:00.707744Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:00.707801Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:00.707853Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:05.705860Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:05.706057Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:05.706111Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:05.706161Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:05.706213Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:05.706259Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:10.684769Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:10.684944Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:10.684998Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:10.685049Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:10.685101Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:10.685148Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:14.858645Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:14.858795Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:14.858845Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:14.858895Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:14.858946Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:14.858991Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:19.883443Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:19.883611Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:19.883668Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:19.883722Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:19.883779Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:19.883830Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:25.739796Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:25.739956Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:25.740012Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:25.740068Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:25.740126Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:25.740177Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:29.858240Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:29.858397Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:29.858452Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:29.858508Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:29.858565Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:29.858616Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:34.878359Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:34.878522Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:34.878578Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:34.878633Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:34.878774Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:34.878826Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:40.711932Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:40.712007Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:40.712026Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:40.712045Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:40.712065Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:40.712083Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:45.704798Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:45.704951Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:45.705001Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:45.705051Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:45.705103Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:45.705149Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:50.628060Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:50.628154Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:50.628212Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:50.628267Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:50.628324Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:50.628375Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:33:55.739824Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:33:55.739989Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:33:55.740065Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:33:55.740123Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:33:55.740182Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:33:55.740233Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:00.684058Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:00.684216Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:00.684271Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:00.684326Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:00.684385Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:00.684436Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:05.700942Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:05.701100Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:05.701157Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:05.701211Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:05.701268Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:05.701319Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:10.707409Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:10.707570Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:10.707622Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:10.707672Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:10.707724Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:10.707771Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:15.700586Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:15.700739Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:15.700790Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:15.700841Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:15.700893Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:15.700939Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:20.691813Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:20.691974Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:20.692025Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:20.692075Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:20.692127Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:20.692172Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:25.735866Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:25.736033Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:25.736104Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:25.736162Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:25.736221Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:25.736272Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:30.823003Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:30.823195Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:30.823756Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:30.823835Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:30.823869Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:30.823921Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:35.732739Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:35.732892Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:35.732947Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:35.733002Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:35.733059Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:35.733110Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:40.713045Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:40.713208Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:40.713264Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:40.713355Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:40.713394Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:40.713441Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:45.712774Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:45.712929Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:45.712980Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:45.713029Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:45.713081Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:45.713128Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:34:50.712823Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:34:50.712983Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:34:50.713034Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:34:50.713084Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:34:50.713136Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:34:50.713183Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:40:10.526433Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:40:10.526606Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:40:10.526663Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:40:10.526718Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:40:10.526775Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:40:10.526826Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:40:18.186299Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:40:18.186372Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:40:18.186394Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:40:18.186415Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:40:18.186437Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:40:18.186457Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:40:23.710434Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:40:23.710595Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:40:23.710652Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:40:23.710707Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:40:23.710763Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:40:23.710814Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:40:28.220550Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:40:28.220621Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:40:28.220642Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:40:28.220662Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:40:28.220684Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:40:28.220721Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:40:33.685009Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:40:33.685162Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:40:33.685213Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:40:33.685263Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:40:33.685315Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:40:33.685361Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:40:39.435319Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:40:39.435475Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:40:39.435525Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:40:39.435576Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:40:39.435628Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:40:39.435674Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:40:44.442502Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:40:44.442657Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:40:44.442713Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:40:44.442769Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:40:44.442826Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:40:44.442878Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:40:49.446767Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:40:49.446927Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:40:49.446984Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:40:49.447039Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:40:49.447152Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:40:49.447212Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:40:54.445971Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:40:54.446130Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:40:54.446186Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:40:54.446240Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:40:54.446297Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:40:54.446348Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:40:59.449608Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:40:59.449774Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:40:59.449830Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:40:59.449885Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:40:59.449942Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:40:59.449994Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:41:04.442146Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:41:04.442300Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:41:04.442396Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:41:04.442450Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:41:04.442502Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:41:04.442547Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:41:09.432233Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:41:09.432392Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:41:09.432443Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:41:09.432493Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:41:09.432544Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:41:09.432590Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:41:14.440360Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:41:14.440437Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:41:14.440457Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:41:14.440476Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:41:14.440496Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:41:14.440533Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:41:19.441878Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:41:19.442026Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:41:19.442077Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:41:19.442125Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:41:19.442177Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:41:19.442223Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:41:24.440587Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:41:24.440754Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:41:24.440833Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:41:24.440856Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:41:24.440878Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:41:24.440897Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:43:30.030495Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:43:30.030667Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:43:30.030725Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:43:30.030781Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:43:30.030839Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:43:30.030890Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:43:31.893354Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:43:31.893502Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:43:31.893558Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:43:31.893612Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:43:31.893712Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:43:31.893762Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:43:37.402960Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:43:37.403485Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:43:37.403537Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:43:37.403558Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:43:37.403578Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:43:37.403596Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:43:42.409955Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:43:42.410027Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:43:42.410047Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:43:42.410066Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:43:42.410086Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:43:42.410104Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:43:47.403596Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:43:47.403670Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:43:47.403691Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:43:47.403711Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:43:47.403731Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:43:47.403749Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:43:52.403357Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:43:52.403428Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:43:52.403447Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:43:52.403466Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:43:52.403487Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:43:52.403504Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:43:57.407280Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:43:57.407347Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:43:57.407366Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:43:57.407385Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:43:57.407405Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:43:57.407422Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:44:02.387217Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:44:02.387378Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:44:02.387434Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:44:02.387489Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:44:02.387548Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:44:02.387600Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:44:07.437277Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:44:07.437372Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:44:07.437392Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:44:07.437411Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:44:07.437431Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:44:07.437448Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:44:12.403989Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:44:12.404142Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:44:12.404193Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:44:12.404243Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:44:12.404294Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:44:12.404341Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:44:17.403560Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:44:17.403639Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:44:17.403659Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:44:17.403678Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:44:17.403699Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:44:17.403716Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:44:22.407219Z[0m [32m INFO[0m ThreadId(02) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:44:22.407288Z[0m [32m INFO[0m ThreadId(02) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:44:22.407307Z[0m [32m INFO[0m ThreadId(02) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:44:22.407326Z[0m [32m INFO[0m ThreadId(02) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:44:22.407347Z[0m [32m INFO[0m ThreadId(02) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:44:22.407363Z[0m [32m INFO[0m ThreadId(02) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:44:27.384812Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:44:27.384907Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:44:27.384927Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:44:27.384947Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:44:27.384967Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:44:27.384984Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning
+[2m2026-08-10T10:44:32.404062Z[0m [32m INFO[0m ThreadId(03) 🔍 R1 - before current_round.lock
+[2m2026-08-10T10:44:32.404133Z[0m [32m INFO[0m ThreadId(03) 🔍 R2 - round=0, before current_view.lock
+[2m2026-08-10T10:44:32.404152Z[0m [32m INFO[0m ThreadId(03) 🔍 R3 - view=0, before get_primary
+[2m2026-08-10T10:44:32.404171Z[0m [32m INFO[0m ThreadId(03) 🔍 R4 - leader=node1, before round_state.lock
+[2m2026-08-10T10:44:32.404191Z[0m [32m INFO[0m ThreadId(03) 🔍 R5 - state=Proposing, before validators.lock
+[2m2026-08-10T10:44:32.404209Z[0m [32m INFO[0m ThreadId(03) 🔍 R6 - validator_count=3, returning

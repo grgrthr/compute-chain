@@ -1,0 +1,321 @@
+   Compiling compute_chain v0.98.0 (/home/lsmasl/Downloads/compute-chain-public)
+warning: use of deprecated function `base64::encode`: Use Engine::encode
+   --> src/api/handlers/jobs.rs:169:35
+    |
+169 |             "input_data": base64::encode(&file_bytes),
+    |                                   ^^^^^^
+    |
+    = note: `#[warn(deprecated)]` on by default
+
+warning: variable does not need to be mutable
+   --> src/api/worker_ws.rs:195:25
+    |
+195 |     ws.on_upgrade(move |mut socket| handle_events(socket))
+    |                         ----^^^^^^
+    |                         |
+    |                         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `worker_id`
+  --> src/node/event_handler.rs:39:60
+   |
+39 | ...ompleted(job_id: &str, worker_id: &str, ctx: &EventContext) {
+   |                           ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_worker_id`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `compute_chain` (bin "compute_chain") generated 3 warnings (run `cargo fix --bin "compute_chain" -p compute_chain` to apply 2 suggestions)
+warning: `compute_chain` (bin "compute_chain" test) generated 3 warnings (3 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2m 05s
+     Running unittests src/main.rs (target/debug/deps/compute_chain-c43ae05ed48ec097)
+
+running 278 tests
+test ai::data::tests::test_create_dataset ... ok
+test ai::data::tests::test_normalize ... ok
+test ai::inference::tests::test_submit_and_process ... ok
+test ai::model::tests::test_model_registration ... ok
+test ai::model::tests::test_prediction ... ok
+test ai::proof::tests::test_proof_generation_and_verification ... ok
+test ai::training::tests::test_training ... ok
+test api::handlers::browser_jobs::tests::test_commitment_proof_generated ... ok
+test api::handlers::browser_jobs::tests::test_commitment_proof_independent_verify ... ok
+test api::handlers::browser_jobs::tests::test_commitment_trace_deterministic ... ok
+test api::handlers::browser_jobs::tests::test_handle_result_failed_worker ... ok
+test api::handlers::browser_jobs::tests::test_handle_result_verified ... ok
+test api::handlers::browser_jobs::tests::test_hash_mismatch_detected ... ok
+test api::handlers::browser_jobs::tests::test_is_already_finalized ... ok
+test api::handlers::browser_jobs::tests::test_merkle_deterministic ... ok
+test api::handlers::browser_jobs::tests::test_no_finalize_without_verification ... ok
+test api::handlers::browser_jobs::tests::test_register_job ... ok
+test api::handlers::browser_jobs::tests::test_tampered_record_rejected ... ok
+test api::handlers::browser_jobs::tests::test_wrong_worker_rejected ... ok
+test asic::detector::tests::test_asic_detection ... ok
+test asic::resistance::tests::test_adaptive_mutation ... ok
+test asic::mutator::tests::test_mutate_workload ... ok
+test asic::resistance::tests::test_asic_detection ... ok
+test asic::scheduler::tests::test_adjust_difficulty ... ok
+test blockchain::block_builder::tests::test_block_contains_valid_proofs ... ok
+test blockchain::block_builder::tests::test_block_hash_deterministic ... ok
+test blockchain::block_builder::tests::test_empty_block ... ok
+test blockchain::block_builder::tests::test_different_jobs_different_hash ... ok
+test blockchain::block_builder::tests::test_merkle_roots_present ... ok
+test blockchain::block_builder::tests::test_multiple_jobs_block ... ok
+test blockchain::block_builder::tests::test_same_inputs_same_block ... ok
+test blockchain::block_builder::tests::test_single_job_block ... ok
+test blockchain::chain::tests::test_append_block ... ok
+test blockchain::chain::tests::test_find_block ... ok
+test blockchain::chain::tests::test_fork_detection ... ok
+test blockchain::chain::tests::test_genesis_chain ... ok
+test blockchain::chain::tests::test_invalid_block_hash ... ok
+test blockchain::chain::tests::test_invalid_height ... ok
+test blockchain::chain::tests::test_invalid_previous_hash ... ok
+test blockchain::chain::tests::test_large_chain ... ok
+test blockchain::chain::tests::test_rollback ... ok
+test blockchain::chain::tests::test_validate_entire_chain ... ok
+test compute_pool::tests::test_deterministic ... ok
+test compute_pool::tests::test_duplicate ... ok
+test compute_pool::tests::test_e2e ... ok
+test compute_pool::tests::test_invalid ... ok
+test compute_pool::tests::test_multiple_jobs ... ok
+test compute_pool::tests::test_stats ... ok
+test compute_pool::tests::test_submit_and_assign ... ok
+test compute_pool::tests::test_submit_result ... ok
+test compute_pool::tests::test_timeout ... ok
+test consensus::block::tests::test_genesis_block ... ok
+test consensus::dpos::tests::test_dpos ... ok
+test consensus::engine::tests::test_accept ... ok
+test consensus::engine::tests::test_deterministic ... ok
+test consensus::engine::tests::test_duplicate ... ok
+test consensus::engine::tests::test_fork ... ok
+test consensus::engine::tests::test_longest ... ok
+test consensus::engine::tests::test_partition ... ok
+test consensus::engine::tests::test_reject ... ok
+test consensus::engine::tests::test_sync ... ok
+test consensus::engine::tests::test_three_nodes ... ok
+test consensus::engine::tests::test_tiebreak ... ok
+test consensus::p_bft::tests::test_duplicate_vote_prevention ... ok
+test consensus::p_bft::tests::test_leader_rotation ... ok
+test consensus::p_bft::tests::test_prepare_commit ... ok
+test consensus::p_bft::tests::test_timeout_detection ... ok
+test consensus::p_bft::tests::test_view_change ... ok
+test consensus::pos::tests::test_add_stake ... ok
+test consensus::pos::tests::test_select_validator ... ok
+test consensus::pow::tests::test_pow ... ok
+test consensus::validator::tests::test_register_validator ... ok
+test consensus::validator::tests::test_select_validator ... ok
+test contract::storage::tests::test_gas_estimation ... ok
+test contract::storage::tests::test_gas_limit_exceeded ... ok
+test economic::fees::tests::test_calculate_fee ... ok
+test economic::fees::tests::test_collect_fee ... ok
+test economic::incentives::tests::test_calculate_incentive ... ok
+test economic::reputation::tests::test_reputation_changes ... ok
+test blockchain::block_builder::tests::test_large_block ... ok
+test economic::slashing::tests::test_save_and_load ... ok
+test economic::slashing::tests::test_slash_capped_at_max ... ok
+test economic::slashing::tests::test_slash_double_block ... ok
+test economic::staking::tests::test_slash ... ok
+test economic::staking::tests::test_stake_and_unstake ... ok
+test economic::token::tests::test_nonce ... ok
+test economic::token::tests::test_lock_unlock ... ok
+test economic::token::tests::test_nonce_persists_in_balance ... ok
+test economic::token::tests::test_transfer ... ok
+test economic::token::tests::test_save_and_load ... ok
+test integration::runner::tests::test_end_to_end_add ... ok
+test integration::runner::tests::test_end_to_end_mul ... ok
+test marketplace::marketplace::tests::test_cancel_order ... ok
+test marketplace::marketplace::tests::test_create_and_match ... ok
+test marketplace::marketplace::tests::test_market_summary ... ok
+test marketplace::marketplace::tests::test_stats_accumulate ... ok
+test marketplace::matching::tests::test_calculate_value ... ok
+test integration::runner::tests::test_end_to_end_deterministic ... ok
+test marketplace::matching::tests::test_fifo_match ... ok
+test marketplace::matching::tests::test_market_summary ... ok
+test marketplace::matching::tests::test_match_orders_full ... ok
+test marketplace::matching::tests::test_no_match_different_difficulty ... ok
+test marketplace::matching::tests::test_partial_match ... ok
+test marketplace::order::tests::test_add_order ... ok
+test merkle::challenge::tests::test_batch ... ok
+test merkle::challenge::tests::test_deterministic_different_verifiers_same_output ... ok
+test merkle::challenge::tests::test_deterministic_edge_cases ... ok
+test merkle::challenge::tests::test_deterministic_same_input_same_output ... ok
+test merkle::challenge::tests::test_invalid ... ok
+test merkle::challenge::tests::test_passes ... ok
+test merkle::challenge::tests::test_real_compute ... ok
+test merkle::proof::tests::test_invalid_root ... ok
+test merkle::proof::tests::test_wrong_index ... ok
+test merkle::proof::tests::test_valid ... ok
+test merkle::tree::tests::test_generate_proof_invalid_index ... ok
+test merkle::tree::tests::test_generate_proof_valid ... ok
+test merkle::tree::tests::test_merkle_tree_empty ... ok
+test merkle::tree::tests::test_merkle_tree_new ... ok
+test merkle::tree::tests::test_merkle_tree_single_leaf ... ok
+test miner::gpu::tests::test_asic_resistance ... ok
+test miner::pool::tests::test_pool_stats ... ok
+test miner::pool::tests::test_execute_workload ... ok
+test miner::rewards::tests::test_reward_calculation ... ok
+test miner::pool::tests::test_register_miner ... ok
+test miner::rewards::tests::test_reward_distribution ... ok
+test p2p::message::tests::test_all_message_types ... ok
+test p2p::message::tests::test_deterministic_encoding ... ok
+test p2p::message::tests::test_legacy_types_preserved ... ok
+test p2p::message::tests::test_worker_heartbeat_serialization ... ok
+test p2p::message::tests::test_proof_submission_serialization ... ok
+test p2p::message::tests::test_workload_announcement_serialization ... ok
+test p2p::proof_network::tests::test_invalid_job_rejected ... ok
+test p2p::proof_network::tests::test_job_result_fields ... ok
+test p2p::proof_network::tests::test_deterministic_execution ... ok
+test p2p::proof_network::tests::test_proof_verification_by_another_worker ... ok
+test p2p::proof_network::tests::test_multiple_jobs_tracking ... ok
+test p2p::proof_network::tests::test_worker_execute_complex_job ... ok
+test p2p::proof_network::tests::test_worker_execute_simple_job ... ok
+test p2p::proof_network::tests::test_worker_heartbeat ... ok
+test p2p::worker_network::tests::test_scheduler_announce_workload ... ok
+test p2p::worker_network::tests::test_scheduler_rejects_invalid_result ... ok
+test p2p::worker_network::tests::test_message_deterministic_encoding ... ok
+test p2p::worker_network::tests::test_scheduler_worker_registry ... ok
+test p2p::worker_network::tests::test_scheduler_verify_result ... ok
+test p2p::worker_network::tests::test_worker_process_job ... ok
+test p2p::worker_network::tests::test_two_workers_process_same_job ... ok
+test p2p::worker_network::tests::test_worker_to_proof_submission ... ok
+test scheduler::tests::test_cancel_job ... ok
+test scheduler::tests::test_complete_job_updates_worker ... ok
+test scheduler::tests::test_deterministic_scheduling ... ok
+test scheduler::tests::test_duplicate_completion_prevention ... ok
+test scheduler::tests::test_enqueue_dequeue_order ... ok
+test scheduler::tests::test_no_available_worker ... ok
+test scheduler::tests::test_retry_exceeds_max ... ok
+test p2p::worker_network::tests::test_worker_to_result_message ... ok
+test scheduler::tests::test_retry_job ... ok
+test scheduler::tests::test_stats ... ok
+test scheduler::tests::test_timeout_detection ... ok
+test scheduler::tests::test_worker_selection ... ok
+test scheduler::tests::test_worker_selection_by_reputation ... ok
+test stark::air::tests::test_all_opcodes ... ok
+test stark::air::tests::test_bad_opcode ... ok
+test stark::air::tests::test_boundary_ok ... ok
+test stark::air::tests::test_count ... ok
+test stark::air::tests::test_deterministic ... ok
+test stark::air::tests::test_halt_terminal ... ok
+test stark::air::tests::test_first_pc_zero ... ok
+test stark::air::tests::test_jump_allows_non_seq ... ok
+test stark::air::tests::test_last_halt ... ok
+test stark::air::tests::test_load_store_valid ... ok
+test stark::air::tests::test_nonhalt_not_terminal ... ok
+test stark::air::tests::test_pc_jump_fails ... ok
+test stark::air::tests::test_valid_trace ... ok
+test stark::fri::tests::test_build_layer ... ok
+test stark::fri::tests::test_build_proof_empty ... ok
+test stark::fri::tests::test_build_proof_deterministic ... ok
+test stark::fri::tests::test_build_proof_single ... ok
+test stark::fri::tests::test_custom_config ... ok
+test stark::fri::tests::test_default_config ... ok
+test stark::fri::tests::test_fold_deterministic ... ok
+test stark::fri::tests::test_fold_empty ... ok
+test stark::fri::tests::test_fold_halves_domain ... ok
+test stark::fri::tests::test_fold_single ... ok
+test stark::fri::tests::test_generate_queries_count ... ok
+test stark::fri::tests::test_generate_queries_deterministic ... ok
+test stark::fri::tests::test_generate_queries_empty_domain ... ok
+test stark::fri::tests::test_generate_queries_in_bounds ... ok
+test stark::fri::tests::test_layer_merkle_root_deterministic ... ok
+test stark::fri::tests::test_many_layers ... ok
+test stark::fri::tests::test_verify_query_out_of_bounds_fails ... ok
+test stark::fri::tests::test_verify_valid_proof ... ok
+test stark::fri::tests::test_verify_wrong_config_fails ... ok
+test stark::fri::tests::test_verify_wrong_layer_count_fails ... ok
+test stark::fri::tests::test_build_proof_large ... ok
+test stark::proof_manager::tests::test_empty ... ok
+test stark::proof_manager::tests::test_invalid_rejected ... ok
+test stark::proof_manager::tests::test_metadata ... ok
+test stark::proof_manager::tests::test_deterministic ... ok
+test stark::proof_manager::tests::test_modified_rejected ... ok
+test stark::proof_manager::tests::test_quick ... ok
+test stark::proof_manager::tests::test_valid_pipeline ... ok
+test stark::proof_manager::tests::test_repeated ... ok
+test stark::proof_manager::tests::test_version ... ok
+test stark::prover::tests::test_constraint_violation ... ok
+test stark::prover::tests::test_custom_config ... ok
+test stark::prover::tests::test_commit_deterministic ... ok
+test stark::prover::tests::test_empty_rejected ... ok
+test stark::prover::tests::test_evaluate_empty ... ok
+test stark::prover::tests::test_evaluate_valid ... ok
+test stark::prover::tests::test_prove_deterministic ... ok
+test stark::prover::tests::test_prove_simple ... ok
+test stark::prover::tests::test_serialization ... ok
+test stark::simple_stark::tests::test_batch_proof ... ok
+test stark::simple_stark::tests::test_compressed_proof ... ok
+test stark::simple_stark::tests::test_fri_layers ... ok
+test stark::simple_stark::tests::test_memory_root ... ok
+test stark::simple_stark::tests::test_prove_verify ... ok
+test stark::simple_stark::tests::test_quick_verify ... ok
+test stark::simple_stark::tests::test_wrong_trace_fails ... ok
+test stark::verifier::tests::test_correct_public_input_accepted ... ok
+test stark::verifier::tests::test_empty_trace_rejected ... ok
+test stark::verifier::tests::test_legacy_compute_verifier ... ok
+test stark::verifier::tests::test_legacy_compute_verifier_rejects_wrong ... ok
+test stark::verifier::tests::test_quick_verify_empty_fails ... ok
+test stark::verifier::tests::test_quick_verify_valid ... ok
+test stark::verifier::tests::test_tampered_final_registers_rejected ... ok
+test stark::verifier::tests::test_tampered_trace_length_rejected ... ok
+test stark::verifier::tests::test_tampered_trace_root_rejected ... ok
+test stark::verifier::tests::test_valid_proof_accepted ... ok
+test stark::verifier::tests::test_verification_deterministic ... ok
+test stark::verifier::tests::test_wrong_fri_layers_rejected ... ok
+test stark::verifier::tests::test_wrong_merkle_root_rejected ... ok
+test stark::verifier::tests::test_wrong_public_input_rejected ... ok
+test stark::verifier::tests::test_zero_length_proof_rejected ... ok
+test stark::winterfell_adapter::tests::test_simple_stark ... ok
+test trace::serializer::tests::test_serialize_mov ... ok
+test trace::serializer::tests::test_serialize_push_pop ... ok
+test trace::tracer::tests::test_tracer_new ... ok
+test trace::tracer::tests::test_tracer_record ... ok
+test trace::tracer::tests::test_verify_trace_empty ... ok
+test trace::tracer::tests::test_verify_trace_invalid_step_order ... ok
+test trace::tracer::tests::test_verify_trace_valid ... ok
+test vm::cpu::tests::test_cpu_new ... ok
+test vm::cpu::tests::test_push_pop ... ok
+test vm::executor::tests::test_call_ret ... ok
+test vm::executor::tests::test_mov_instruction ... ok
+test vm::executor::tests::test_push_pop ... ok
+test workload::generator::tests::test_different_difficulty_different_count ... ok
+test workload::generator::tests::test_different_seed_different_workload ... ok
+test workload::generator::tests::test_large_workload ... ok
+test workload::generator::tests::test_legacy_api ... ok
+test workload::generator::tests::test_program_always_halts ... ok
+test workload::generator::tests::test_same_seed_same_workload ... ok
+test workload::generator::tests::test_seed_hash_stable ... ok
+test workload::generator::tests::test_workload_executes_successfully ... ok
+test workload::generator::tests::test_workload_generates_valid_proof ... ok
+test workload::network_seed::tests::test_different_difficulty_different_seed ... ok
+test workload::network_seed::tests::test_different_round_different_seed ... ok
+test workload::network_seed::tests::test_different_workers_different_seed ... ok
+test workload::network_seed::tests::test_genesis_seed ... ok
+test workload::network_seed::tests::test_next_round ... ok
+test workload::network_seed::tests::test_same_metadata_same_seed ... ok
+test workload::network_seed::tests::test_seed_generated_proof_valid ... ok
+test workload::network_seed::tests::test_three_nodes_derive_identical_workloads ... ok
+test workload::network_seed::tests::test_to_workload_config ... ok
+test workload::network_seed::tests::test_worker_hash_deterministic ... ok
+test workload::round_manager::tests::test_duplicate_round_rejected ... ok
+test workload::round_manager::tests::test_future_round_rejected ... ok
+test workload::round_manager::tests::test_genesis_round ... ok
+test workload::round_manager::tests::test_metadata_deterministic ... ok
+test workload::round_manager::tests::test_multiple_consecutive_rounds ... ok
+test stark::prover::tests::test_prove_large ... ok
+test workload::round_manager::tests::test_round_increment ... ok
+test workload::round_manager::tests::test_same_nodes_derive_identical_next_round ... ok
+test workload::round_manager::tests::test_stale_round_rejected ... ok
+test workload::round_manager::tests::test_sync_to_metadata ... ok
+test workload::round_manager::tests::test_workload_after_round_transition ... ok
+test workload::round_manager::tests::test_proofs_valid_after_round_transition ... ok
+
+test result: ok. 278 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.70s
+
+     Running tests/api_test.rs (target/debug/deps/api_test-9033eac948127f65)
+
+running 1 test
+test tests::test_compute_api ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.48s
+
