@@ -37,13 +37,13 @@
 
 cargo check  -> PASS (0 errors, 3 pre-existing warnings)
 cargo build  -> PASS (binary: 169MB)
-cargo test   -> PASS (278 unit + 1 integration = 279 passed, 0 failed)
+cargo test   -> PASS (278 unit tests + 1 integration test = 279 passed, 0 failed)
 
 ---
 
 ## D. Test Verification
 
-279 tests passed, 0 failed. Coverage: VM, Trace, Merkle, STARK, Blockchain, Consensus, Economic, P2P, Scheduler, Browser Jobs.
+279 tests passed (278 unit + 1 integration), 0 failed. Coverage: VM, Trace, Merkle, STARK, Blockchain, Consensus, Economic, P2P, Scheduler, Browser Jobs.
 
 ---
 
@@ -117,7 +117,7 @@ Device 1: http://SERVER_IP:3000/investor — Marketplace — Upload — Submit
 - Video: https://youtube.com/shorts/_CMj4qW8IQM
 - demo_evidence/check.txt — cargo check output
 - demo_evidence/build.txt — cargo build output
-- demo_evidence/test.txt — cargo test output (278 passed)
+- demo_evidence/test.txt — cargo test output (278 unit + 1 integration)
 - demo_evidence/server.txt — server startup log
 - Screenshots + Video — two-device demo recording
 
