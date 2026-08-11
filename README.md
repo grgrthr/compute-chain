@@ -31,4 +31,4 @@ Device 2: Open `http://SERVER_IP:3000/worker` → Join Network
 Dashboard: `http://SERVER_IP:3000/investor`
 
 ## License
-To be determined.
+MIT License — Copyright (c) 2026 Ismail Abdo
