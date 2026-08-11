@@ -16,7 +16,7 @@
 | Working tree | Clean (only evidence files untracked) |
 | cargo check | PASS — 0 errors |
 | cargo build | PASS — binary 169MB |
-| cargo test | PASS — 278 passed, 0 failed |
+| cargo test | PASS — 279 passed (278 unit + 1 integration), 0 failed |
 | Server startup | PASS — API :3000, P2P :5000 |
 | Two-device demo | PASS — 6 jobs, 60 rewards |
 | Dashboard live updates | PASS — WebSocket, no refresh needed |

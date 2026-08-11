@@ -11,7 +11,7 @@ Maps every claim to its supporting evidence.
 | Two-device validation | docs/VALIDATION_EVIDENCE.md |
 | Six jobs completed, 60 rewards | docs/VALIDATION_EVIDENCE.md |
 | Demonstration video | https://youtube.com/shorts/_CMj4qW8IQM |
-| Repository source | Commit 836931e (HEAD as of audit) |
+| Repository source | Commit 09d0769 (current HEAD) |
 | Evidence captured at | Commit a9264c3 (original demo) |
 | Project overview | docs/PROJECT_OVERVIEW.md |
 | Architecture | docs/ARCHITECTURE.md |
